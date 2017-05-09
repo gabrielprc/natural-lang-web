@@ -1,0 +1,67 @@
+@import '../../../../node_modules/antd/dist/antd.css';
+
+$black-color: #232323;
+$blue-light-color: #8bf6ff;
+$blue-color: #4fc3f7;
+$blue-dark-color: #0093c4;
+$orange-color: #ff9868;
+$pink-color: #b5004d;
+$yellow-color: #fff17a;
+
+.layout {
+	height: 100%;
+	color: $black-color;
+
+	* {
+		font-size: 15px;
+		text-align: center;
+		color: $black-color;
+	}
+
+	a {
+		color: rgba(0, 0, 0, 0.65);
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+
+	.header, .footer {
+		z-index: 2;
+	}
+
+	.header {
+		padding: 0;
+		height: 48px;
+		background-color: $yellow-color;
+	}
+
+	.content{
+		background-color: $blue-color;
+		min-height: 13em;
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 10px;
+		background-color: rgba(35, 35, 35, 0.25);
+
+		.inner {
+			position: relative;
+			height: -webkit-calc(50% - 15px);
+		    height:    -moz-calc(50% - 15px);
+		    height:         calc(50% - 15px);
+		}
+
+		a {
+			font-weight: bold;
+		}
+
+		span {
+			padding: 0px 10px 0px 10px;
+		}
+	}
+}
+
