@@ -5,9 +5,8 @@
   "private": true,
   "main": "backend/dist/src/app.js",
   "scripts": {
-    "start": "npm run start-backend & npm run build-frontend",
+    "start": "npm run serve",
     "start-dev": "npm run start-backend-dev && npm run start-frontend-dev",
-    "start-backend": "npm run build-backend && npm run serve",
     "start-frontend-dev": "node frontend/scripts/start.js",
     "start-backend-dev": "nodemon --watch backend/src backend/src/app.js --exec babel-node --presets es2015,stage-2",
     "build": "npm run build-backend && npm run build-frontend",
