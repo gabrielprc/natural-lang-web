@@ -3,6 +3,6 @@ import Request from './request';
 export default {
   translate(text) {
     const req = new Request();
-    return req.doPost('/pseudocode', {text});
+    return req.doPost('/natural', {text});
   },
 };

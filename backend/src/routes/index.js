@@ -1,5 +1,5 @@
 import exercises from './exercises';
 import home from './home';
-import pseudocode from './pseudocode'; 
+import natural from './natural'; 
 
-export { home, exercises, pseudocode };
+export { home, exercises, natural };

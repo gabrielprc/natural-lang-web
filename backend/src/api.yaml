@@ -1,10 +1,10 @@
 # [START swagger]
 swagger: "2.0"
 info:
-  description: "Backend endpoints examples"
-  title: "Endpoints"
+  description: "Translation API endpoints for the interactive web platform of the Natural Language Project"
+  title: "Translation API"
   version: "0.0.1"
-host: "localhost:3001"
+host: "localhost:8080"
 # [END swagger]
 basePath: "/"
 consumes:
@@ -37,24 +37,24 @@ paths:
         name: "id"
         required: true
         type: "integer" 
-  "/pseudocode":
+  "/natural":
     post:
-      description: "Returns the pseudocode from the natural language"
+      description: "Returns the pseudocode and javascript translations from a natural language piece of text"
       operationId: "naturalText"
       produces:
       - "application/text"
       responses:
         200:
-          description: "Pseudocode response"
+          description: "Pseudocode and javascript response"
       parameters:
       - description: "Natural text"
         in: "body"
         name: "object"
         required: true
         schema:
-          $ref: "#/definitions/Pseudocode"
+          $ref: "#/definitions/Natural"
 definitions:  
-  Pseudocode:
+  Natural:
     type: "object"
     properties:
       text:

@@ -1,4 +1,4 @@
 import exercises from './exercises';
-import pseudocode from './pseudocode';
+import natural from './natural';
 
-export { exercises, pseudocode };
+export { exercises, natural };

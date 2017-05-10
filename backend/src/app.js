@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import swaggerTools from 'swagger-tools';
 import YAML from 'yamljs';
-import { home, exercises, pseudocode } from './routes';
+import { home, exercises, natural } from './routes';
 
 const swaggerDoc = YAML.load(__dirname + '/api.yaml');
 
@@ -33,5 +33,5 @@ app.use(express.static('dist'));
 // Routes
 app.use('/', home);
 app.use('/exercises', exercises);
-app.use('/pseudocode', pseudocode)
+app.use('/natural', natural)
 

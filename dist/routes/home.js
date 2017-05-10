@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _express = require('express');
@@ -17,8 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express2.default.Router();
 
 router.get('/', function (req, res) {
-  res.sendFile('index.html');
-  // res.send(`Hello stranger, it's been a while. Go to http://localhost:3001/docs`);
+	res.sendFile('index.html');
 });
 
 exports.default = router;

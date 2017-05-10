@@ -52,4 +52,4 @@ app.use(_express2.default.static('dist'));
 // Routes
 app.use('/', _routes.home);
 app.use('/exercises', _routes.exercises);
-app.use('/pseudocode', _routes.pseudocode);
+app.use('/natural', _routes.natural);
