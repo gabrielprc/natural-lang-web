@@ -63,7 +63,7 @@ class TextEditor extends React.Component {
           value={this.props.value}
           className={this.props.className}
           readOnly={this.props.readOnly}
-          width='auto'
+          width={this.props.width}
           height={this.props.height}
           fontSize={this.props.fontSize}
           mode={this.props.mode}
@@ -72,6 +72,7 @@ class TextEditor extends React.Component {
           name="text_editor"
           showPrintMargin={false}
           showGutter={this.props.showGutter}
+          wrapEnabled={this.props.wrapEnabled}
           editorProps={{ $blockScrolling: true }}
         />
       </div>
