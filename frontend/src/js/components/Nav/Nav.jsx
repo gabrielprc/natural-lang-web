@@ -9,13 +9,13 @@ class Nav extends React.Component {
     return (
       <Menu mode="horizontal" className="menu">
         <Menu.Item key="home">
-          <NavLink to=""><Icon type="home"/>Home</NavLink>
+          <NavLink to=""><Icon type="home"/>Inicio</NavLink>
         </Menu.Item>
         <Menu.Item key="help">
-          <NavLink to="/help"><Icon type="question"/>Help</NavLink>
+          <NavLink to="/help"><Icon type="question"/>Ayuda</NavLink>
         </Menu.Item>
         <Menu.Item key="learn">
-          <NavLink to="/learn"><Icon type="smile-o"/><b>Code!</b></NavLink>
+          <NavLink to="/learn"><Icon type="smile-o"/><b>¡Aprender!</b></NavLink>
         </Menu.Item>
       </Menu>
     );

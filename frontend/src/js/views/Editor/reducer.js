@@ -7,8 +7,8 @@ export default function lessons(state = [], action) {
     case GET_LESSONS:
       return state;
     case GET_LESSONS_SUCCESS:
-      const { level } = action.payload;
-      return [...action.payload];
+      // const { level } = action.payload;
+      return [action.payload];
     case GET_LESSONS_ERROR:
       return state;
     default:

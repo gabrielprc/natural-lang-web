@@ -29,9 +29,11 @@ export default {
       dispatch(getLessons());
       Lessons.getLessons(level || 1)
         .then(function({data}) {
+          console.log(data);
           dispatch(getLessonsSuccess(data));
         })
         .catch(function({error}) {
+          console.error(error);
           dispatch(getLessonsError(error));
         });
     }

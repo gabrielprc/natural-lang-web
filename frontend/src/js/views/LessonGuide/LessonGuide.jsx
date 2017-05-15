@@ -1,5 +1,4 @@
 import React from 'react';
-import { findIndex } from 'lodash';
 import { Card, Steps, Layout } from 'antd';
 import './styles.scss';
 const Step = Steps.Step;
@@ -11,20 +10,13 @@ class LessonGuide extends React.Component {
     super(props);
   }
 
-  getNextExercise = () => {
-    const { exercises } = this.props.lessons ? this.props.lessons[0] : [];
-    const index = findIndex(exercises, (e) => e.done === false);
-    return index > -1 ? exercises[index] : null;
-  };
-
   render() {
-    const exercise = this.props.lessons
-      ? this.getNextExercise()
-      : null;
+    const exercise = this.props.exercise;
+
     return (
-      <Card className="card" title="Introduction" bordered={false}>
+      <Card loading={!exercise} className="card" title={exercise ? exercise.title : '...'} bordered={false}>
         <Layout>
-          <Sider width='18px'>
+          <Sider width="18px">
             <Steps direction="vertical" size="small">
               <Step/>
               <Step/>
@@ -32,16 +24,20 @@ class LessonGuide extends React.Component {
             </Steps>
           </Sider>
           <Layout>
-            <Content>
-              {exercise ?
-                <div>
-                  <h3>{exercise.title}</h3>
-                  <p>{exercise ? exercise.description : 'Possible exercise'}</p>
-                  <div className='instructions'>
-                    <p>{exercise.instructions}</p>
+            <Content className="exercise">
+              {
+                exercise &&
+                  <div>
+                    <h3>{exercise ? exercise.description : 'Possible exercise'}</h3>
+                    <p></p>
+                    <div className="instructions">
+                      {exercise.instructions.map((exer, index) =>
+                        <p key={index} className={exer.code ? 'code' : ''}>
+                          {exer.text}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
-                : <p>Possible exercise</p>
               }
             </Content>
           </Layout>

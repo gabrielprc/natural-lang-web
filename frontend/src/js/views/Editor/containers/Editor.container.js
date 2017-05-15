@@ -11,7 +11,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log(LessonsActions);
   return bindActionCreators({
     changeTextEditorTheme, changeFontSize, ...LessonsActions,
   }, dispatch);

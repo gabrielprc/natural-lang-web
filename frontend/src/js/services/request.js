@@ -8,7 +8,24 @@ export default class Request {
 
   doGet(url, params) {
     try {
-    	return axios.get(this.url + url, params);
+      var queryParams = '';
+      var first = true;
+
+      if (params) {
+        var keys = Object.keys(params)
+        for (var i = 0; i < keys.length; i++) {
+          var key = keys[i];
+          if (first) {
+            queryParams += '?';
+            first = false;
+          } else {
+            queryParams += '&';
+          }
+          queryParams += encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+        }
+      }
+
+    	return axios.get(this.url + url + queryParams);
   	} catch (e) {
   		console.error(e);
   	}
