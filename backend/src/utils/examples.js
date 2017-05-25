@@ -1,5 +1,5 @@
 // Exercises response example
-export const exercises = [
+export const lessons = [
   {
     id: 1,
     level: "Inicial",
