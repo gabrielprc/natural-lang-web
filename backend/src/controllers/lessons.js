@@ -8,7 +8,7 @@ const getLessons = (req, res) => {
 const getExercisesById = (req, res) => {
   const id = +req.params.id;
   const exercises = isNumber(id)
-    ? lessons.find(lesson => lesson.id === id && lesson)
+    ? (lessons.find(lesson => lesson.id === id) || 'Not found')
     : 'Not found';
 		
   res.send(exercises);
