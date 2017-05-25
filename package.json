@@ -14,7 +14,8 @@
     "build-backend": "babel backend/src -d dist && cp backend/src/api.yaml dist/",
     "serve": "node dist/app.js",
     "test": "mocha --compilers js:babel-register && node frontend/scripts/test.js --env=jsdom",
-    "lint": "eslint frontend/src/js/**"
+    "lint": "eslint frontend/src/js/**",
+    "lint-backend": "eslint backend/src/**/*.js"
   },
   "author": "Gabriel Rodriguez and Mariano Furriel",
   "license": "ISC",

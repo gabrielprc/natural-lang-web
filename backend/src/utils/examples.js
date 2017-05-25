@@ -2,29 +2,29 @@
 export const lessons = [
   {
     id: 1,
-    level: "Inicial",
+    level: 'Inicial',
     exercises: [
       { id: 1,
-        title: "¿Cuál es tu nombre?",
-        description: "¡Bienvenido! Dime tu nombre para conocernos mejor",
-        instructions: "Escribe tu nombre de la siguiente forma, nombre es '' y presiona Enter",
+        title: '¿Cuál es tu nombre?',
+        description: '¡Bienvenido! Dime tu nombre para conocernos mejor',
+        instructions: 'Escribe tu nombre de la siguiente forma, nombre es "" y presiona Enter',
         done: false
       },
       {
         id: 2,
-        title: "Sumar dos números",
-        description: "test",
-        instructions: "test",
+        title: 'Sumar dos números',
+        description: 'test',
+        instructions: 'test',
         done: false
       }
     ]
   },
   {
     id: 2,
-    level: "Intermedio",
+    level: 'Intermedio',
     exercises: []
   }
 ];
 
 // Natural language example
-export const natural = `La variable números es una lista. Además, i es i + 1.`;
+export const natural = 'La variable números es una lista. Además, i es i + 1.';

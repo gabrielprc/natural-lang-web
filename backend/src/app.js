@@ -14,7 +14,7 @@ const logger = morgan('tiny');
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT} ...`);
-})
+});
 
 // Config
 app.set('json spaces', 2);
@@ -34,5 +34,4 @@ app.use(express.static('dist'));
 const prefix = '/api';
 app.use(`${prefix}/`, home);
 app.use(`${prefix}/lessons`, lessons);
-app.use(`${prefix},/natural`, natural)
-
+app.use(`${prefix},/natural`, natural);
