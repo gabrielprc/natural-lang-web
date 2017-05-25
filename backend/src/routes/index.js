@@ -1,5 +1,5 @@
-import exercises from './exercises';
+import lessons from './lessons';
 import home from './home';
 import natural from './natural'; 
 
-export { home, exercises, natural };
+export { home, lessons, natural };

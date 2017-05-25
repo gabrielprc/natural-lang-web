@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import swaggerTools from 'swagger-tools';
 import YAML from 'yamljs';
-import { home, exercises, natural } from './routes';
+import { home, lessons, natural } from './routes';
 
 const swaggerDoc = YAML.load(__dirname + '/api.yaml');
 
@@ -31,7 +31,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, (middleware) => {
 app.use(express.static('dist'));
 
 // Routes
-app.use('/', home);
-app.use('/exercises', exercises);
-app.use('/natural', natural)
+const prefix = '/api';
+app.use(`${prefix}/`, home);
+app.use(`${prefix}/lessons`, lessons);
+app.use(`${prefix},/natural`, natural)
 

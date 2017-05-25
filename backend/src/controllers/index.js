@@ -1,4 +1,4 @@
-import exercises from './exercises';
+import lessons from './lessons';
 import natural from './natural';
 
-export { exercises, natural };
+export { lessons, natural };
