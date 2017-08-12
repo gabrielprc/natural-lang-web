@@ -28,7 +28,6 @@ class Signup extends React.Component {
     ) {
       return;
     }
-
     this.doSubmit();
   }
 
@@ -62,6 +61,7 @@ class Signup extends React.Component {
         password: this.state.password
       })
     }).then(function(response) {
+      // this.props.loginUser(this.state.email);
       if (response.ok) {
         window.location.assign('/');
       } else {
@@ -69,6 +69,7 @@ class Signup extends React.Component {
       }
     })
     .catch(function(error) {
+      // this.props.loginUserError(this.state.email);
       console.error(error);
     });
   }
