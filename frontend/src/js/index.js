@@ -7,13 +7,18 @@ import App from './app';
 import Sandbox from './views/Sandbox';
 import Editor from './views/Editor';
 import Home from './views/Home';
+import Login from './views/Login';
+import Signup from './views/Signup';
 
 ReactDOM.render(
   <Provider store={store}>
    <Router>
       <App>
         <Route exact path="/" component={Home} />
-        <Route path="/learn" component={Editor} />
+        <Route path="/login" component={Login} />
+        <Route path="/Signup" component={Signup} />
+        <Route path="/tutorial" component={Editor} />
+        <Route exact path="/faq" component={Home} />
         <Route path="/docs" component={Sandbox} />
       </App>
     </Router>

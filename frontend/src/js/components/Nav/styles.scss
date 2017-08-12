@@ -1,12 +1,14 @@
 .header {
 	.menu {
 		margin: 0 auto;
-		width: 33%;
 		background: none;
 		border: none;
 
 		li {
-			width: 33.33%;
+			float: none;
+			width: 150px;
+		    margin: 0 auto;
+		    display: inline-block;
 		}
 	}
 }
