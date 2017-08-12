@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Interactive web platform for the Natural Language Project",
   "private": true,
+  "proxy": "http://localhost:8888",
   "main": "backend/dist/src/app.js",
   "scripts": {
     "start": "npm run serve",

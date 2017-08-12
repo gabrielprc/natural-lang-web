@@ -187,7 +187,8 @@ function addMiddleware(devServer) {
 
     // Pass the scope regex both to Express and to the middleware for proxying
     // of both HTTP and WebSockets to work without false positives.
-    var hpm = httpProxyMiddleware(pathname => mayProxy.test(pathname), {
+    // var hpm = httpProxyMiddleware(pathname => mayProxy.test(pathname), {
+    var hpm = httpProxyMiddleware('/api/**', {
       target: proxy,
       logLevel: 'silent',
       onProxyReq: function(proxyReq, req, res) {
@@ -203,7 +204,7 @@ function addMiddleware(devServer) {
       changeOrigin: true,
       ws: true
     });
-    devServer.use(mayProxy, hpm);
+    devServer.use(hpm);
 
     // Listen for the websocket 'upgrade' event and upgrade the connection.
     // If this is not done, httpProxyMiddleware will not try to upgrade until

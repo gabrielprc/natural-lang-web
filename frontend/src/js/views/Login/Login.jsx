@@ -8,14 +8,14 @@ class Login extends React.Component {
         <div className="login outer">
           <div className="middle">
             <div className="inner">
-              <form action="login">
+              <form action="api/login" method="POST">
                 <div className="signup block">
                     <a href="signup">Crear cuenta</a>
                 </div>
                   <div className="separator"></div>
                   <div className="block">
                       <h1>Iniciar sesión</h1>
-                      <input type="text" name="email" placeholder="Correo electrónico"></input>
+                      <input type="email" name="email" placeholder="Correo electrónico"></input>
                       <input type="password" name="password" placeholder="Contraseña"></input>
                       <input type="submit" value="Ingresar"></input>
                   </div>

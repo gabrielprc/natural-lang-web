@@ -18,7 +18,8 @@ class Signup extends React.Component {
     if (
       this.state.password !== this.state.confirmation
       || this.state.password === ''
-      || this.state.name === ''
+      || this.state.firstName === ''
+      || this.state.lastName === ''
       || this.state.email === ''
     ) {
       event.preventDefault();
@@ -34,7 +35,7 @@ class Signup extends React.Component {
         <div className="login outer">
           <div className="middle">
             <div className="inner">
-              <form action="signup" onSubmit={this.handleSubmit}>
+              <form action="api/users" method="POST" onSubmit={this.handleSubmit}>
                   <div className="block">
                       <h1>Crear cuenta</h1>
                       <select name="role">
@@ -49,9 +50,17 @@ class Signup extends React.Component {
                       </input>
                       <input
                         type="text"
-                        name="name"
+                        name="firstName"
+                        className="half"
                         onChange={this.handleChange}
-                        placeholder="Nombre completo">
+                        placeholder="Nombre">
+                      </input>
+                      <input
+                        type="text"
+                        name="lastName"
+                        className="half"
+                        onChange={this.handleChange}
+                        placeholder="Apellido">
                       </input>
                       <input
                         type="password"

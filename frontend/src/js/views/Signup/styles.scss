@@ -74,6 +74,12 @@
 		    font-weight: 500;
 		    margin-top: 50px;
 		}
+
+		&.half {
+			width: 145px;
+		    display: inline-block;
+		    margin-right: 10px;
+		}
 	}
 
 	select {
