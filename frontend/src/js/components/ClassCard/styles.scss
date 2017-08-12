@@ -1,0 +1,39 @@
+.classCard {
+	padding: 30px;
+
+	.ant-card-head-title {
+		font-size: 20px;
+    	font-weight: 400;
+	}
+
+	.ant-card-head {
+	    height: 60px;
+	    line-height: 60px;
+	}
+
+	.info {
+		padding: 7px;
+	}
+
+	.professor {
+		margin-right: 10px;
+		font-weight: 600;
+	}
+
+	.subscribeButton {
+		width: 180px;
+	    margin: 0 auto;
+	    padding: 10px;
+	    font-weight: bold;
+	    border-radius: 5px;
+	    background: #f3e464;
+
+	    &.subscribed {
+		    background: #64d49c;
+		}
+
+		.icon {
+			width: 0px;
+		}
+	}
+}

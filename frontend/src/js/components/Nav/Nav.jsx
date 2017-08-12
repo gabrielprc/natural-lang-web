@@ -14,6 +14,9 @@ class Nav extends React.Component {
         <Menu.Item key="tutorial">
           <NavLink to="/tutorial"><Icon type="smile-o"/><b>Tutorial</b></NavLink>
         </Menu.Item>
+        <Menu.Item key="clases">
+          <NavLink to="/classes"><Icon type="edit"/><b>Clases</b></NavLink>
+        </Menu.Item>
         <Menu.Item key="login">
           <NavLink to="/login"><Icon type="rocket"/>Login</NavLink>
         </Menu.Item>

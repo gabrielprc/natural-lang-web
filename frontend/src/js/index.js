@@ -9,6 +9,7 @@ import Editor from './views/Editor';
 import Home from './views/Home';
 import Login from './views/Login';
 import Signup from './views/Signup';
+import Classes from './views/Classes';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,8 +17,9 @@ ReactDOM.render(
       <App>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/Signup" component={Signup} />
+        <Route path="/signup" component={Signup} />
         <Route path="/tutorial" component={Editor} />
+        <Route path="/classes" component={Classes} />
         <Route exact path="/faq" component={Home} />
         <Route path="/docs" component={Sandbox} />
       </App>
