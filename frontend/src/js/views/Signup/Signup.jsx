@@ -6,15 +6,19 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      role: 'student',
       password: '',
       confirmation: ''
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.doSubmit = this.doSubmit.bind(this);
+    this.handleSignupSuccess = this.handleSignupSuccess.bind(this);
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     if (
       this.state.password !== this.state.confirmation
       || this.state.password === ''
@@ -22,8 +26,51 @@ class Signup extends React.Component {
       || this.state.lastName === ''
       || this.state.email === ''
     ) {
-      event.preventDefault();
+      return;
     }
+
+    this.doSubmit();
+  }
+
+  doSubmit() {
+    fetch('api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.state)
+    }).then(function(response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(this.handleSignupSuccess)
+    .catch(function(error) {
+      console.error(error);
+    });
+  }
+
+  handleSignupSuccess() {
+    fetch('api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password
+      })
+    }).then(function(response) {
+      if (response.ok) {
+        window.location.assign('/');
+      } else {
+        throw new Error(response);
+      }
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
   }
 
   handleChange(event) {
@@ -35,10 +82,12 @@ class Signup extends React.Component {
         <div className="login outer">
           <div className="middle">
             <div className="inner">
-              <form action="api/users" method="POST" onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                   <div className="block">
                       <h1>Crear cuenta</h1>
-                      <select name="role">
+                      <select
+                        name="role"
+                        onChange={this.handleChange}>
                         <option value="student">Estudiante</option>
                         <option value="professor">Profesor</option>
                       </select>
