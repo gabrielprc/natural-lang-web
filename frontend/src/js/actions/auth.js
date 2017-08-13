@@ -10,13 +10,13 @@ const requestLoginUser = (user) => ({
 const requestLoginUserSuccess = (user) => ({
   type: REQUEST_LOGIN_USER_SUCCESS,
   user,
-  logged: true,
+  loggedIn: true,
 });
 
 const requestLoginUserError = (user) => ({
   type: REQUEST_LOGIN_USER_ERROR,
   user,
-  logged: false,
+  loggedIn: false,
 });
 
 

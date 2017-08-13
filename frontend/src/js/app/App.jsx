@@ -12,11 +12,10 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <Layout className="layout">
         <Header className="header">
-          <Nav/>
+          <Nav store={this.props.store}/>
         </Header>
         <Content className="content">
           { this.props.children }

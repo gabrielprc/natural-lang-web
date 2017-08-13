@@ -63,7 +63,7 @@ class Signup extends React.Component {
     }).then(function(response) {
       // this.props.loginUser(this.state.email);
       if (response.ok) {
-        window.location.assign('/');
+        this.props.loginUser(this.state.email);
       } else {
         throw new Error(response);
       }

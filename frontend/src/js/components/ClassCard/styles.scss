@@ -28,6 +28,10 @@
 	    border-radius: 5px;
 	    background: #f3e464;
 
+	    &:hover {
+	    	cursor: pointer;
+	    }
+
 	    &.subscribed {
 		    background: #64d49c;
 		}

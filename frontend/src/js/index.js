@@ -14,7 +14,7 @@ import Classes from './views/Classes';
 ReactDOM.render(
   <Provider store={store}>
    <Router>
-      <App>
+      <App store={store}>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />

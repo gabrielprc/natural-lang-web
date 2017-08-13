@@ -3,20 +3,19 @@ import {
 } from 'js/actions/constants'; 
 
 const initialState = {
-  user: '',
-  logged: '',
-  token: '',
+  loggedIn: false,
+  token: ''
 };
 
 const auth = (state = initialState, action) => {
-  let { user, logged } = action;    
+  let { user, loggedIn } = action;    
   switch (action.type) {
     case REQUEST_LOGIN_USER:
       return { ...state, user};
     case REQUEST_LOGIN_USER_SUCCESS:
-      return { ...state, user, logged };
+      return { ...state, user, loggedIn };
     case REQUEST_LOGIN_USER_ERROR:
-      return { ...state, user, logged };
+      return { ...state, user, loggedIn };
     default:
       return state;
   }
