@@ -7,38 +7,80 @@ class ClassCard extends React.Component {
   constructor(props) {
     super(props);
 
+    const { clazz, userInSession } = this.props;
+    const { students } = clazz;
+
     this.state = {
-      ...props
+      studentsLength: students.length,
+      subscribed: userInSession && students.indexOf(userInSession.id) > -1
     }
 
     this.handleSubscribe = this.handleSubscribe.bind(this);
   }
 
   handleSubscribe() {
-    this.setState({
-      subscribed: !this.state.subscribed,
-      students: this.state.subscribed ? (this.state.students - 1) : (this.state.students + 1)
+    if (this.state.subscribed) {
+      return;
+    }
+
+    const self = this;
+
+    fetch('api/classrooms/subscription', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        idClassroom: this.props.clazz.id,
+        idUser: this.props.userInSession.id
+      })
+    }).then(function(response) {
+      if (response.ok) {
+        self.setState({
+          subscribed: true,
+          studentsLength: self.state.studentsLength + 1
+        });
+      } else {
+        throw new Error(response.error);
+      }
+    })
+    .catch(function(error) {
+      console.error(error);
     });
   }
 
   render() {
-    let subscriptionInfo;
-    let progress;
+    const { clazz, userInSession } = this.props;
+    const { name } = clazz;
+    const professor = clazz.professor.firstName + ' ' + clazz.professor.lastName;
+
+    const totalExercises = clazz.exercises.length;
+    let completeExercises = 0;
+    for (let i = 0; i < totalExercises.length; i++) {
+      if (totalExercises[i].approved) {
+        completeExercises++;
+      }
+    }
+    const progress = completeExercises / totalExercises * 100;
+
+    let subscriptionComponent;
+    let progressComponent;
+
     if (this.state.subscribed) {
-      subscriptionInfo = (
+      subscriptionComponent = (
         <div className="info">
           <div className="subscribeButton subscribed" onClick={this.handleSubscribe}>
             Inscripto <Icon className="icon" type="check"/>
           </div>
         </div>
       );
-      progress = (
+      progressComponent = (
         <div className="info">
-          <Progress percent={this.state.progress} showInfo={false}/>
+          <Progress percent={progress} showInfo={false}/>
         </div>
       );
     } else {
-      subscriptionInfo = (
+      subscriptionComponent = (
         <div className="info">
           <div className="subscribeButton" onClick={this.handleSubscribe}>
             Inscribirse
@@ -49,16 +91,16 @@ class ClassCard extends React.Component {
 
     return (
       <Col span={8} className="classCard">
-        <Card title={this.state.title} bordered={false}>
+        <Card title={name} bordered={false}>
           <div className="info">
             <span className="professor">Profesor:</span>
-            <span>{this.state.professor}</span>
+            <span>{professor}</span>
           </div>
           <div className="info">
-            <span>{this.state.students} inscriptos</span>
+            <span>{this.state.studentsLength} inscriptos</span>
           </div>
-          {subscriptionInfo}
-          {progress}
+          {subscriptionComponent}
+          {progressComponent}
         </Card>
       </Col>
     );
