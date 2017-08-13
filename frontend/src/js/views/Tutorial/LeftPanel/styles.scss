@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.content {
+  padding: 1em 1em;
+}
+
+.title {
+  color: #41a3d0;
+}
