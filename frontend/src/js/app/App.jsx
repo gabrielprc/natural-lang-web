@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <Layout className="layout">
         <Header className="header">
-          <Nav store={this.props.store}/>
+          <Nav/>
         </Header>
         <Content className="content">
           { this.props.children }

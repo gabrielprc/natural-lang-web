@@ -8,18 +8,18 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      loggedIn: false
-    };
+    // this.state = {
+    //   loggedIn: false
+    // };
 
-    const store = this.props.store;
-    store.subscribe(() => {
-      let auth = store.getState().auth;
-      this.setState({
-        loggedIn: auth.loggedIn,
-        role: auth.user ? auth.user.role : null
-      });
-    });
+    // const store = this.props.store;
+    // store.subscribe(() => {
+    //   let auth = store.getState().auth;
+    //   this.setState({
+    //     loggedIn: auth.loggedIn,
+    //     role: auth.user ? auth.user.role : null
+    //   });
+    // });
   }
 
   render() {
@@ -53,7 +53,7 @@ class Nav extends React.Component {
 
     items.push(home);
     items.push(tutorial);
-    if (this.state.loggedIn) {
+    if (this.props.loggedIn) {
       items.push(classes);
       items.push(faq);
     } else {

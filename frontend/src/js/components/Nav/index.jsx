@@ -1,3 +1,3 @@
-import Nav from './Nav';
+import Nav from './Nav.container';
 
 export default Nav;
