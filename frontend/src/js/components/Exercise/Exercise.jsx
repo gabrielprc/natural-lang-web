@@ -4,21 +4,21 @@ import styles from './styles.scss';
 
 export default class Exercise extends React.Component {
 
-  renderInstructions = () => {
-    return this.props.instructions.map((instruction, id) => 
-      <p>{id++}. {instruction}</p>
-    );
-  }
+  // renderInstructions = () => {
+  //   return this.props.instructions.map((instruction, id) => 
+  //     <p>{id++}. {instruction}</p>
+  //   );
+  // }
 
   render() {
-    const {title, description, instructions } = this.props;
+    const { name, description } = this.props;
 
     return (
-      <div>
-        <h1 className={styles.title}>{`• ${title}`}</h1>
+      <div className={styles.exercise}>
+        <h1 className={styles.title}>{`• ${name}`}</h1>
         <p className={styles.description}>{ description }</p>
-        <Card title="Instrucciones">
-          { instructions && this.renderInstructions()}
+        <Card title="Instrucciones" className={styles.instructions}>
+          { description }
         </Card>
       </div> 
     );

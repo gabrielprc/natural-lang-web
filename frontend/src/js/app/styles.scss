@@ -30,22 +30,22 @@ $yellow-color: #fff17a;
 		}
 	}
 
-	.header, .footer {
+	&>.header, &>.footer {
 		z-index: 2;
 	}
 
-	.header {
+	&>.header {
 		padding: 0;
 		height: 48px;
 		background-color: $yellow-color;
 	}
 
-	.content{
-		// background-color: $blue-color;
+	&>.content{
+		background-color: $blue-color;
 		min-height: 13em;
 	}
 
-	.footer {
+	&>.footer {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
