@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import './styles.scss';
 
 class Login extends React.Component {
@@ -8,7 +9,8 @@ class Login extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      loggedIn: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -43,6 +45,9 @@ class Login extends React.Component {
     })
     .then((json) => {
       self.props.loginUser(json);
+      self.setState({
+        loggedIn: true
+      });
     })
     .catch(function(error) {
       // this.props.loginUserError(this.state.email);
@@ -53,6 +58,7 @@ class Login extends React.Component {
   render() {
     return (
         <div className="login outer">
+          {this.state.loggedIn && <Redirect to="/" push/>}
           <div className="middle">
             <div className="inner">
               <form onSubmit={this.handleSubmit}>

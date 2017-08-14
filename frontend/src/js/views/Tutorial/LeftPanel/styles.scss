@@ -1,5 +1,9 @@
-.splitPane {
+.panel {
+  border: 2px dashed #f9f9f9;
+  border-radius: 4px;
+
   .header {
+    margin: -2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,7 +11,6 @@
     padding-left: 1em;
     padding-right: 1em;
     background-color: #f9f9f9;
-    border-bottom: 1px solid #EEEEEE;
 
     &> * {
       font-size: 1.5em;
