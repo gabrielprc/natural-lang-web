@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Card, Spin } from 'antd';
 import styles from './styles.scss';
 
 export default class Exercise extends React.Component {
@@ -14,11 +14,13 @@ export default class Exercise extends React.Component {
     const { name, description } = this.props;
 
     return (
-      <div className={styles.exercise}>
-        <h1 className={styles.title}>{`• ${name}`}</h1>
-        <p className={styles.description}>{ description }</p>
-        <Card title="Instrucciones" className={styles.instructions}>
+      <div className="exercise">
+        <h1 className="title">{`Ejercicio: ${name}`}</h1>
+        <Card title="Instrucciones" className="instructions">
           { description }
+        </Card>
+        <Card title="Resultado" className="result">
+          <Spin tip="Esperando la resolución..."/>
         </Card>
       </div> 
     );

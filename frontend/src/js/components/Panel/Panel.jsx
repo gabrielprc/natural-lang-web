@@ -6,6 +6,10 @@ export default class Panel extends React.Component {
     className: React.PropTypes.object,
   }
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className={this.props.className}>

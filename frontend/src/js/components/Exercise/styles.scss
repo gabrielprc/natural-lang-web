@@ -2,6 +2,7 @@
 	.title {
 	  font-size: 1.4em;
 	  padding-bottom: 1em;
+	  color: black;
 	}
 
 	.description {
@@ -10,5 +11,10 @@
 
 	.instructions {
 		
+	}
+
+	.result {
+		margin-top: 30px;
+		text-align: center;
 	}
 }

@@ -8,11 +8,11 @@ export default class LeftPanel extends React.Component {
 
   render() {
     return (
-      <Panel>
-        <Header className={styles.header}>
+      <Panel className="panel">
+        <Header className="header">
           <h1>Tutorial</h1>
         </Header>  
-        <div className={styles.content}>
+        <div className="content">
           <Exercise />
         </div>  
       </Panel>
