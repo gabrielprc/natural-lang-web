@@ -23,10 +23,10 @@ class App extends React.Component {
         <Footer className="footer">
           <div className="inner">
             <span>
-              <a href="https://github.com/marianfu/natural-language-frontend" target="_blank">Text</a> ©2017
+              <a href="https://github.com/marianfu/natural-language-frontend" target="_blank">Natural</a> ©2017
             </span>
             <span>
-              Crafted by <a href="https://github.com/gabrielprc" target="_blank">@gabrielprc</a> and <a href="https://github.com/marianfu" target="_blank">@marianfu</a>
+              Creado por <b>Gabriel Rodriguez</b> y <b>Mariano Furriel</b>
             </span>
           </div>
         </Footer>

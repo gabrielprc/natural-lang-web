@@ -17,7 +17,7 @@ export default class Exercise extends React.Component {
 
   evaluateExercise = () => {
     const { javascript, expected } = this.props;
-    return javascript == expected ? this.success() : this.error();
+    return expected.test(javascript) ? this.success() : this.error();
   }
 
   hideSuccessModal = () => {
@@ -54,14 +54,14 @@ export default class Exercise extends React.Component {
 
     return (
       <div>
-        <h1 className={styles.title}>{`• ${title}`}</h1>
-        <p className={styles.description}>{ description }</p>
-        <div className={styles.instructions}>
+        <h1 className="title">{`• ${title}`}</h1>
+        <p className="description">{ description }</p>
+        <div className="instructions">
           <Card title="Instrucciones">
             { instructions && this.renderInstructions()}
           </Card>
         </div>
-        <div className={styles.runButton}> 
+        <div className="runButton"> 
           <Button type="primary" onClick={this.evaluateExercise}>Ejecutar código</Button>
         </div>
         <Modal

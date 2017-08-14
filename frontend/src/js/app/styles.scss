@@ -31,13 +31,16 @@ $yellow-color: #fff17a;
 	}
 
 	&>.header, &>.footer {
+		text-align: center;
+	}
+
+	&>.header, &>.footer {
 		z-index: 2;
 	}
 
 	&>.header {
 		padding: 0;
 		height: 48px;
-		text-align: center;
 		background-color: $yellow-color;
 	}
 

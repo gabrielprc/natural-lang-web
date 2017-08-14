@@ -78,8 +78,6 @@
     "node-sass": "^4.5.0",
     "postcss-loader": "1.2.2",
     "prettyjson": "^1.2.1",
-    "prose-js": "0.0.10",
-    "pseudo-js": "0.0.4",
     "react": "^15.4.2",
     "react-ace": "^4.1.6",
     "react-codemirror": "^1.0.0",

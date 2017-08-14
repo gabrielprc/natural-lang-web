@@ -60,13 +60,13 @@ class Home extends React.Component {
           <div className="middle">
             <div className="inner">
               <TypeWriter typing={this.state.writers[0]} onTypingEnd={this.handleTypingEnd} maxDelay={50}>
-                Read text.
+                Leer
               </TypeWriter>
               <TypeWriter typing={this.state.writers[1]} onTypingEnd={this.handleTypingEnd} maxDelay={50}>
-                Write text.
+                Escribir
               </TypeWriter>
               <TypeWriter typing={this.state.writers[2]} onTypingEnd={this.handleTypingEnd} maxDelay={50}>
-                Learn code.
+                Programar!
               </TypeWriter>
             </div>
           </div>
