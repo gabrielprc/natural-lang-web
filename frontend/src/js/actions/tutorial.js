@@ -1,30 +1,27 @@
 import { 
-  START_TUTORIAL, GET_EXERCISE, FINISH_EXERCISE, GET_NEXT_EXERCISE 
+  SET_EXERCISE_DONE, COMPLETE_EXERCISE,
 } from './constants';
+import { getTutorialExercise } from './exercise';
+import { cleanWokspace } from './workspace';
 
 
-const startTutorial = () => ({
-  type: START_TUTORIAL,
+const finishExercise = () => ({
+  type: COMPLETE_EXERCISE,
+})
+
+const setExerciseDone = (exerciseId) => ({
+  type: SET_EXERCISE_DONE,
+  exerciseId,
 });
 
-const finishExercise = (id) => ({
-  type: FINISH_EXERCISE,
-  id,
-});
+export const completeExercise = () => (dispatch, getState) => {
+  const state = getState();
+  const currentExerciseId = state.exercise.id;
 
-const getNextExercise = (id) => ({
-  type: GET_NEXT_EXERCISE,
-  id,
-});
-
-
-export const getInitialExercise = () => (dispatch, getState) => {
-  dispatch(startTutorial());
+  dispatch(finishExercise());
+  dispatch(cleanWokspace());
+  dispatch(setExerciseDone(currentExerciseId));
+  dispatch(getTutorialExercise());
 };
 
-export const completeExercise = (id) => (dispatch, getState) => {
-  dispatch(finishExercise(id));
-};
-
-
-export default { getInitialExercise, completeExercise };
+export default { completeExercise };

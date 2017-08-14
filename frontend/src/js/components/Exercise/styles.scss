@@ -1,23 +1,29 @@
-.exercise {
-	.title {
-	  font-size: 1.4em;
-	  padding-bottom: 1em;
-	  color: black;
-	}
+.title {
+  font-size: 1.4em;
+  padding-bottom: 1em;
+}
 
-	.description {
-	  padding-bottom: 2em;
-	}
+.description {
+  padding-bottom: 2em;
+}
 
-	.instructions {
-		
-	}
+.instructions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1em;  
+}
 
-	.result {
-		margin-top: 30px;
+.result {
+	margin-top: 30px;
 
-		.ant-card-body {
-			text-align: center;
-		}
+	.ant-card-body {
+		text-align: center;
 	}
+}
+
+.runButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
 }
