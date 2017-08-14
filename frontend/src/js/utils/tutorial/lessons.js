@@ -2,21 +2,6 @@
 
 const lessons = [
   {
-    id: 4,
-    title: 'Condiciones',
-    description: `Algo muy importante en la programación son las condiciones.
-      En algunos casos, queremos hacer ciertas cosas sólo si se cumple una condición, es decir, si una pregunta que nos hacemos es verdadera.
-      Sino, realizaremos otra acción alternativa.`,
-    instructions: [
-      'Declarar la variable "edad", y asignarle como valor tu propia edad',
-      'Luego, escribe lo siguiente: "Si la edad es mayor a 18, es estado es \"mayor de edad\""',
-      'Finalmente: Escribe el valor alternativo que tomará la variable "estado" en caso de que la edad sea menor a 18',
-      'Pista: ... Sino, ...'
-    ],
-    done: false,
-    expected: /edad = [0-9]+;\s*if\s*\(edad > 18\)\s*{\s*estado = ["']\w+["'];\s*}\s*else\s*{\s*estado = ["']\w+["'];\s*}/i,
-  },
-  {
     id: 1,
     title: 'Variables',
     description: `Crear aplicaciones implica trabajar con variables y tipo de datos. 
@@ -52,6 +37,21 @@ const lessons = [
     ],
     done: false,
     expected: /nombre = ["']\w+["'];/i,
+  },
+  {
+    id: 4,
+    title: 'Condiciones',
+    description: `Algo muy importante en la programación son las condiciones.
+      En algunos casos, queremos hacer ciertas cosas sólo si se cumple una condición, es decir, si una pregunta que nos hacemos es verdadera.
+      Sino, realizaremos otra acción alternativa.`,
+    instructions: [
+      'Declarar la variable "edad", y asignarle como valor tu propia edad',
+      'Luego, escribe lo siguiente: "Si la edad es mayor a 18, es estado es \"mayor de edad\""',
+      'Finalmente: Escribe el valor alternativo que tomará la variable "estado" en caso de que la edad sea menor a 18',
+      'Pista: ... Sino, ...'
+    ],
+    done: false,
+    expected: /edad = [0-9]+;\s*if\s*\(edad > 18\)\s*{\s*estado = ["']\w+["'];\s*}\s*else\s*{\s*estado = ["']\w+["'];\s*}/i,
   },
   
   // {
