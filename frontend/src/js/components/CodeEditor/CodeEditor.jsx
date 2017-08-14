@@ -1,5 +1,5 @@
 import React from 'react';
-import { debounce } from 'lodash';
+import { debounce, isEmpty } from 'lodash';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
@@ -7,14 +7,16 @@ import 'brace/mode/text';
 import 'brace/mode/json';
 import 'brace/theme/monokai';
 
-const options = {
-  lineNumbers: true,
-}
-
 class CodeEditor extends React.Component {
 
   state = {
-    code: '',
+    code: this.props.code,
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (isEmpty(nextProps.code)) {
+      this.setState({ code: '' });
+    }
   }
 
   saveCode = debounce(this.props.saveCode, 1000);

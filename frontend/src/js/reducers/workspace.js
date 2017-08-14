@@ -1,7 +1,7 @@
 import { 
   SAVE_WORKSPACE_CODE, SAVE_WORKSPACE_PSEUDOCODE, SAVE_WORKSPACE_PSEUDOCODE_ERROR,
   SAVE_WORKSPACE_AST, SAVE_WORKSPACE_AST_ERROR, SAVE_WORKSPACE_JAVASCRIPT,
-  SAVE_WORKSPACE_JAVASCRIPT_ERROR,
+  SAVE_WORKSPACE_JAVASCRIPT_ERROR, CLEAN_WORKSPACE,
 } from 'js/actions/constants';
 
 const defaultState = {
@@ -24,6 +24,8 @@ export default function workspace(state = defaultState, action) {
     case SAVE_WORKSPACE_JAVASCRIPT:
     case SAVE_WORKSPACE_JAVASCRIPT_ERROR:
       return { ...state, javascript: action.javascript };
+    case CLEAN_WORKSPACE: 
+      return defaultState;
     default:
       return state;
   }

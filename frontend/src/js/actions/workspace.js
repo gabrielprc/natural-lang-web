@@ -1,7 +1,7 @@
 import { 
   SAVE_WORKSPACE_CODE, SAVE_WORKSPACE_PSEUDOCODE, SAVE_WORKSPACE_PSEUDOCODE_ERROR,
   SAVE_WORKSPACE_AST, SAVE_WORKSPACE_AST_ERROR, SAVE_WORKSPACE_JAVASCRIPT,
-  SAVE_WORKSPACE_JAVASCRIPT_ERROR,
+  SAVE_WORKSPACE_JAVASCRIPT_ERROR, CLEAN_WORKSPACE,
 } from './constants';
 import NaturalService from 'js/services/natural';
 
@@ -41,8 +41,16 @@ const saveJavascriptToWorkspaceError = (error) => ({
   error,
 });
 
+const cleanWorkspaceCode = () => ({
+  type: CLEAN_WORKSPACE,
+})
 
-const getNaturalCodeTransformations = (code) => dispatch => {
+
+export const cleanWokspace = () => (dispatch) => {
+  dispatch(cleanWorkspaceCode());
+}
+
+export const getNaturalCodeTransformations = (code) => dispatch => {
   dispatch(saveCodeToWorkspace(code));
  
   return NaturalService.getCodeFromNatural(code)
@@ -63,11 +71,12 @@ const getNaturalCodeTransformations = (code) => dispatch => {
     });
 };
 
-const saveCode = code => dispatch => {
+export const saveCode = code => dispatch => {
   dispatch(saveCodeToWorkspace(code));
 }
 
 export default {
   saveCode,
+  cleanWokspace,
   getNaturalCodeTransformations,
 };
